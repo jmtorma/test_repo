@@ -6,14 +6,14 @@ jobs:
     steps:
       - checkout
       - run: go get -v -t -d ./…
-    working_directory: /go/src/github.com/{{ORG_NAME}}/{{REPO_NAME}}
+    working_directory: /go/src/github.com/jmtorma/test_repo
   test:
     docker:
       - image: circleci/golang:1.9
     steps:
       - checkout
       - run: go test -v ./…
-    working_directory: /go/src/github.com/{{ORG_NAME}}/{{REPO_NAME}}
+    working_directory: /go/src/github.com/jmtorma/test_repo
 workflows:
   version: 2
   build_and_test:
